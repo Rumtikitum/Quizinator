@@ -1,0 +1,116 @@
+.topline {
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+}
+
+.score {
+    flex: 1;
+    justify-content: left;
+    color: teal;
+    font-size: 15px;
+    padding-left: 200px;
+}
+
+.timer {
+    flex: 1;
+    justify-content: right;
+    text-align: end;
+    color: teal;
+    font-size: 15px;
+    padding-right: 180px;
+
+}
+
+.midline {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.blankspace {
+    flex: 2;
+}
+
+.innercard {
+    background-image: linear-gradient(to bottom right, silver, teal, gold); 
+    padding: 125px;
+    flex: 8;
+    border-radius: 5px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 400px;
+    display: flex;
+}
+
+.blankinner {
+    flex: 1;
+}
+
+#textcontent {
+    flex: 5;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -130px;
+}
+
+
+
+.title {
+    color: white;
+    font-size: 40px;
+}
+
+.intro-sentence {
+    color: white;
+    font-size: 20px;
+}
+
+#btn {
+    background-color: transparent;
+    border: solid rgba(255, 196, 0, 0.61) 2px;
+    color: rgba(255, 196, 0, 0.61);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+#questions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.qbtn {
+    background-color: transparent;
+    border: solid rgba(255, 196, 0, 0.61) 2px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 400px;
+}
+
+.qbtn:hover {
+    background-color: black;
+    color: white;
+}
+
+.hide {
+    display: none !important;
+}

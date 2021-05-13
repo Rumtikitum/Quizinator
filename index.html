@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Time!!!</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div class="topline">
+       <p class="score">View High Score: 0</p>
+       <p class="timer">Timer Countdown: 45seconds</p>
+    </div>
+    <div class="midline">
+        <div class="blankspace"></div>
+        <div class="innercard">
+            <div class="blankinner"></div>
+            <div id="textcontent">
+                <strong class="title">
+                    Coding Quiz Challenge
+                </strong>
+                <p class="intro-sentence">
+                    Wish to test your metal? Take the challenge and get your highscore! Challenge your friends and see who is most knowledgable
+                </p>
+                <button type="button" onclick="startGame()" id="btn">
+                Begin!
+                </button>
+            </div>
+            <div class="hide" id="questions">
+                <h1>QUESTION 1</h1>
+                <button type="button" class="qbtn">Answer</button>
+                <button type="button" class="qbtn">Answer</button>
+                <button type="button" class="qbtn">Answer</button>
+                <button type="button" class="qbtn">Answer</button>
+            </div>
+            <div class="blankinner"></div>
+        </div>
+        <div class="blankspace"></div>
+    </div>
+    <script src="assets/test.js"></script>
+</body>
+</html>
