@@ -17,22 +17,27 @@
         <div class="innercard">
             <div class="blankinner"></div>
             <div id="textcontent">
-                <strong class="title">
+                <strong class="title" id="title">
                     Coding Quiz Challenge
                 </strong>
-                <p class="intro-sentence">
+                <p class="intro-sentence" id='intro'>
                     Wish to test your metal? Take the challenge and get your highscore! Challenge your friends and see who is most knowledgable
                 </p>
-                <button type="button" onclick="startGame()" id="btn">
-                Begin!
+                <button type="button" id="btn">
+                    Begin!
                 </button>
             </div>
             <div class="hide" id="questions">
-                <h1>QUESTION 1</h1>
-                <button type="button" class="qbtn">Answer</button>
-                <button type="button" class="qbtn">Answer</button>
-                <button type="button" class="qbtn">Answer</button>
-                <button type="button" class="qbtn">Answer</button>
+                <h1 id="questionslip" class="questionslip">QUESTION 1</h1>
+                <div id="selector">
+                    <button type="button" class="qbtn">Answer</button>
+                    <button type="button" class="qbtn">Answer</button>
+                    <button type="button" class="qbtn">Answer</button>
+                    <button type="button" class="qbtn">Answer</button>
+                </div>
+                <button type="button" id="proceedbtn" class="proceedbtn hide">
+                    Proceed
+                </button>
             </div>
             <div class="blankinner"></div>
         </div>
