@@ -8,25 +8,25 @@ var title = document.getElementById('title')
 var intro = document.getElementById('intro')
 
 
-let shuffledQuestions, currentQuestionIndex
+let randomizeQ, currentQ
 
 btn.addEventListener('click', startGame)
 proceed.addEventListener('click', () => {
-  currentQuestionIndex++
-  setNextQuestion()
+  currentQ++
+  nextQ()
 })
 
 function startGame() {
     introPage.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    randomizeQ = questions.sort(() => Math.random() - .5)
     questionContent.classList.remove('hide')
-    currentQuestionIndex = 0
-    setNextQuestion()
+    currentQ = 0
+    nextQ()
 }
 
-function setNextQuestion() {
+function nextQ() {
     resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+    showQuestion(randomizeQ[currentQ])
   }
 
 function showQuestion(question) {
@@ -59,7 +59,7 @@ function selectAnswer(e) {
     Array.from(answerGrid.children).forEach(button => {
       setStatusClass(button, button.dataset.correct)
     })
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    if (randomizeQ.length > currentQ + 1) {
       proceed.classList.remove('hide')
     } else {
       btn.innerText = 'Restart'
