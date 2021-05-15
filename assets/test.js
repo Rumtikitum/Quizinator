@@ -1,3 +1,4 @@
+//All required vars//
 var introPage = document.getElementById('textcontent')
 var questionContent = document.getElementById('questions')
 var btn = document.getElementById('btn')
@@ -6,9 +7,12 @@ var questionEl = document.getElementById('questionslip')
 var answerGrid = document.getElementById('selector')
 var title = document.getElementById('title')
 var intro = document.getElementById('intro')
-
+var highScore = document.getElementById('highScore')
 
 let randomizeQ, currentQ
+
+var timer = document.getElementById('timed')
+timeLeft = 30
 
 btn.addEventListener('click', startGame)
 proceed.addEventListener('click', () => {
@@ -22,14 +26,39 @@ function startGame() {
     questionContent.classList.remove('hide')
     currentQ = 0
     nextQ()
+    countDown()
 }
 
+//--------------------------------------------------------------------------------------------------------------
+
+  
+  
+function countDown() {
+  setInterval(() => {
+   
+    if(timeLeft <= 0) {
+      clearInterval(timeLeft = 0)
+    }
+
+    timer.innerHTML = timeLeft
+    timeLeft -=1
+  }, 1000);
+}
+
+
+function resetTimer() {
+  timeLeft = 30;
+}
+
+//-------------------------------------------------------------------------------------------------------------
+
 function nextQ() {
-    resetState()
-    showQuestion(randomizeQ[currentQ])
+    reset()
+    nextCard(randomizeQ[currentQ])
+    resetTimer()
   }
 
-function showQuestion(question) {
+function nextCard(question) {
     questionEl.innerText = question.question
     question.answers.forEach(answer => {
       const button = document.createElement('button')
@@ -44,46 +73,28 @@ function showQuestion(question) {
   }
 
 
-function resetState() {
-    clearStatusClass(document.body)
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    Array.from(answerGrid.children).forEach(button => {
+    })
+    if (randomizeQ.length > currentQ + 1) {
+      proceed.classList.remove('hide')
+    } else {
+      btn.innerText = 'Restart'
+      intro.innerText = 'Your score is 100!'
+      introPage.classList.remove('hide')
+      questionContent.classList.add('hide')
+    }
+  }
+
+function reset() {
     proceed.classList.add('hide')
     while (answerGrid.firstChild) {
       answerGrid.removeChild(answerGrid.firstChild)
     }
   }
 
-function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerGrid.children).forEach(button => {
-      setStatusClass(button, button.dataset.correct)
-    })
-    if (randomizeQ.length > currentQ + 1) {
-      proceed.classList.remove('hide')
-    } else {
-      btn.innerText = 'Restart'
-      intro.innerText = 'Wow, who knew you knew that much. Now take your score, share this with your friends and see who knows the most!'
-      introPage.classList.remove('hide')
-      questionContent.classList.add('hide')
-    }
-  }
-
-
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
-    if (correct) {
-      element.classList.add('correct')
-    } else {
-      element.classList.add('wrong')
-    }
-  }
-
-
-function clearStatusClass(element) {
-   element.classList.remove('correct')
-   element.classList.remove('wrong')
-  }
 
 const questions = [
     {
