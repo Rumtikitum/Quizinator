@@ -96,6 +96,7 @@
     border: solid rgba(255, 196, 0, 0.61) 2px;
     color: black;
     padding: 15px 32px;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     display: inline-block;

@@ -73,8 +73,8 @@ function nextCard(question) {
   }
 
 
-function selectAnswer(e) {
-    const selectedButton = e.target
+function selectAnswer(event) {
+    const selectedButton = event.target
     const correct = selectedButton.dataset.correct
     Array.from(answerGrid.children).forEach(button => {
     })
